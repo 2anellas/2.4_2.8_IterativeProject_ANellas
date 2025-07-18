@@ -1,0 +1,382 @@
+/****IMPORTED GOOGLE FONTS****/
+@import url('https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap');
+
+/****COLOUR VARIABLES****/
+:root{
+	--navy: #033076; /*used for layout components*/
+	--yellow: #FEC63D; /*used for some text components*/
+	--red: 	#B70F0A; /*used for hover effect on navigation buttons - desktop only*/
+}
+
+
+/****GRID CONTAINER CSS****/
+.grid-container {
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: 50px auto auto 15vh;
+}
+
+
+/****HEADER CSS****/
+.header {
+	box-sizing: border-box;
+	background-color: white;
+	grid-column-start: 1;
+	grid-column-end: span 2;
+	height: auto;
+	padding: 0%;
+}
+
+.header img {
+	max-width: 100%;
+	height: auto;
+	width: 100%;
+}
+
+
+/****NAVIGATION CSS****/
+.nav {
+	background-color: var(--navy);
+	grid-column-end: span 2;
+	display: flex;
+	align-items: center;
+	padding: 10px 20px;
+	position: relative;
+	font-family: "TikTok Sans", sans-serif;
+}
+
+
+/****BURGER NAVIGATION CSS****/
+.logo {
+	font-size: 24px;
+  	font-weight: bold;
+  	color: white;
+}
+
+.burger {
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+	margin-left: auto;
+	gap: 5px;
+}
+
+.burger .line {
+  	width: 25px;
+ 	height: 3px;
+  	background-color: var(--yellow);
+  	border-radius: 2px;
+}
+
+.nav-links {
+	display: none;
+	position: absolute;
+	top: 34px;
+	left: 0px;
+	right: 0px;
+	flex-direction: column;
+	background-color: var(--navy);
+	padding: 10px;
+	list-style: none;
+	z-index: 100;
+}
+
+.nav-links.active {
+  	display: flex;
+}
+
+.nav-links li {
+  	margin-bottom: 10px;
+}
+
+.nav-links li:last-child {
+  	margin-bottom: 0;
+}
+
+.nav-links li a {
+  	text-decoration: none;
+  	color: var(--yellow);
+  	font-weight: bold;
+}
+
+.nav a {
+	color: var(--yellow);
+}
+
+.nav-links a:hover {background-color: var(--red) ;} /*highlight*/	
+
+
+/****HEADER CSS****/
+.content {
+	box-sizing: border-box;
+	background-color: white;
+	position: relative;
+	grid-column-end: span 2
+}
+
+
+/****HOME PAGE CSS****/
+h1 {
+	text-align: center;
+	font-family: "TikTok Sans", sans-serif;
+}
+
+p {
+	text-align: left;
+	margin-left: 80px;
+	margin-right: 80px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	font-family: "TikTok Sans", sans-serif;
+}
+
+/****MEDIA QUERY FOR RESPONSIVE DESIGN****/
+/* Reduces margin space for smaller devices */
+@media (max-width: 600px) {
+  p {
+    	margin-left: 15px;
+    	margin-right: 15px;
+  }
+}
+	
+.activities h1 {
+	color: white;
+}
+
+.activity-links {
+  	display: flex;
+  	flex-wrap: wrap;
+  	justify-content: center; /* center horizontally */
+  	margin: 5px;
+	gap: 20px;
+}
+
+.activity-links a {
+  	display: block;
+ 	width: 22.5%; /* same size for all */
+  	padding: 20px;
+  	color: white;
+  	text-decoration: none;
+  	text-align: center;
+  	box-sizing: border-box;
+	border: 2px solid white;
+	font-family: "TikTok Sans", sans-serif;
+}
+
+.activity-links a:hover {
+	background-color: var(--red);
+	border: none;
+}
+
+/****MEDIA QUERY FOR RESPONSIVE DESIGN****/
+/* Stack vertically on smaller screens */
+@media (max-width: 750px) {
+  .activity-links {
+    	flex-direction: column;
+    	align-items: center; /* center vertically stacked buttons */
+  }
+
+  .activity-links a {
+    width: 100%; /* keep same size */
+  }
+}
+
+.box {
+	padding:15px;
+}
+
+.activities {
+	background-color: var(--navy);
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 15px;
+	padding-bottom: 20px;
+}
+
+
+/****ACTIVITY PAGE CSS****/
+.middle-row {
+  	display: flex;
+  	justify-content: space-between; 
+  	align-items: stretch; /* align tops */
+	min-height: 300px;
+}
+
+.key-info {
+	flex: 1;
+	background-color: var(--navy);
+}
+
+.image-carousel{
+	flex: 1;
+	background-color: var(--red);
+}
+
+.bring {
+	flex: 1;
+	background-color: white;
+}
+
+.video {
+	flex: 1;
+	background-color: white;
+}
+
+.key-info p {
+	text-align: left;
+	color: white;
+}
+
+.key-info h1 {
+	color: white;
+}
+
+/****MEDIA QUERY FOR RESPONSIVE DESIGN****/
+/* Stack vertically on smaller screens */
+@media (max-width: 768px) {
+  .middle-row {
+    	flex-direction: column;
+    	align-items: center;
+  }
+
+  .key-info, .image-carousel, .bring, .video {
+    	max-width: 100%;
+    	width: 100%;
+  }
+}
+
+.box ol {
+	font-family: "TikTok Sans", sans-serif;
+	margin-left: 80px;
+	margin-right: 80px;
+}
+
+/****MEDIA QUERY FOR RESPONSIVE DESIGN****/
+/* Reduces margin space for smaller devices */
+@media (max-width: 600px) {
+  .box ol {
+		margin-left: 15px;
+		margin-right: 15px;
+  }
+}
+
+.box h2 {
+	font-family: "TikTok Sans", sans-serif;
+	margin-left: 80px;
+}
+
+/****MEDIA QUERY FOR RESPONSIVE DESIGN****/
+/* Reduces margin space for smaller devices */
+@media (max-width: 600px) {
+  .box h2 {
+    	margin-left: 15px;
+  }
+}
+
+.gear-list {
+	background-color: var(--navy);
+	padding: 15px;
+}
+
+.gear-list h1 {
+	color: white;
+}
+
+.gear-list h2 {
+	text-align: center;
+}
+
+.lists {
+	display: flex;
+	justify-content: center;
+}
+
+.list {
+	background-color: white;
+	margin: 15px;
+	display: inline-block;
+	width: 22.5%;
+	align-items: center;
+	font-family: "TikTok Sans", sans-serif;
+}
+
+.list p {
+	margin-left: 20px;
+	text-align: left;
+}
+
+/****MEDIA QUERY FOR RESPONSIVE DESIGN****/
+/* Stack vertically on smaller screens */
+@media (max-width: 768px) {
+  .lists {
+    	flex-direction: column;
+    	align-items: center; /* center vertically stacked buttons */
+  }
+
+  .list {
+    	width: 100%; /* keep same size */
+  }
+}
+
+
+/****CONTACT PAGE CSS****/
+.contacts {
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+}
+
+.contact {
+	background-color: var(--navy);
+	display: inline-block;
+	width: 31%;
+	align-items: center;
+	margin: 15px;
+	min-height: 200px;
+}
+
+.contact h2 {
+	color: white;
+	text-align: center;
+	padding-top: 30px;
+	margin: auto;
+	padding: auto;
+}
+
+.contact p {
+	color: white;
+	text-align: center;
+	padding-bottom: 30px;
+	margin: auto;
+	padding: auto;
+}
+
+/****MEDIA QUERY FOR RESPONSIVE DESIGN****/
+/* Stack vertically on smaller screens */
+@media (max-width: 768px) {
+  .contacts {
+    flex-direction: column;
+    align-items: center; /* center vertically stacked buttons */
+  }
+
+  .contact {
+    width: 100%; /* keep same size */
+  }
+}
+
+/****FOOTER CSS****/
+.footer {
+	background-color: var(--navy);
+	grid-column-end: span 2;
+	min-height: 100px;
+	text-align: center;
+	color: var(--yellow);
+	font-family: "TikTok Sans", sans-serif;
+	display: flex;
+  	justify-content: center;   /* center horizontally */
+  	align-items: flex-end;
+}
+
+h5 {
+	font-size: clamp(0.625rem, 1.5vw, 1rem)	
+}
