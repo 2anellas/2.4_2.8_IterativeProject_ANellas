@@ -33,9 +33,9 @@
 
 /*burger nav css*/
 .logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
+  	font-size: 24px;
+ 	font-weight: bold;
+  	color: white;
 }
 
 .burger {
@@ -47,10 +47,10 @@
 }
 
 .burger .line {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  border-radius: 2px;
+  	width: 25px;
+  	height: 3px;
+  	background-color: white;
+  	border-radius: 2px;
 }
 
 .nav-links {
@@ -67,21 +67,21 @@
 }
 
 .nav-links.active {
-  display: flex;
+  	display: flex;
 }
 
 .nav-links li {
-  margin-bottom: 10px;
+  	margin-bottom: 10px;
 }
 
 .nav-links li:last-child {
-  margin-bottom: 0;
+  	margin-bottom: 0;
 }
 
 .nav-links li a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
+  	text-decoration: none;
+  	color: white;
+  	font-weight: bold;
 }
 
 .nav-links a:hover {background-color: pink;} /*highlight*/	
@@ -109,33 +109,33 @@ p {
 }
 
 .activity-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* center horizontally */
-  margin: 5px;
+  	display: flex;
+  	flex-wrap: wrap;
+  	justify-content: center; /* center horizontally */
+  	margin: 5px;
 	gap: 15px;
 }
 
 .activity-links a {
-  display: block;
-  width: 22.5%; /* same size for all */
-  padding: 20px;
-  color: white;
-  text-decoration: none;
-  text-align: center;
-  box-sizing: border-box;
+ 	display: block;
+  	width: 22.5%; /* same size for all */
+  	padding: 20px;
+  	color: white;
+  	text-decoration: none;
+  	text-align: center;
+  	box-sizing: border-box;
 	border: 2px solid white;
 }
 
 /* Stack vertically on smaller screens */
 @media (max-width: 600px) {
   .activity-links {
-    flex-direction: column;
-    align-items: center; /* center vertically stacked buttons */
+    	flex-direction: column;
+    	align-items: center; /* center vertically stacked buttons */
   }
 
   .activity-links a {
-    width: 100%; /* keep same size */
+    	width: 100%; /* keep same size */
   }
 }
 
@@ -153,9 +153,9 @@ p {
 
 /*activity pages css*/
 .middle-row {
-  display: flex;
-  justify-content: space-between; /* optional: space between them */
-  align-items: stretch; /* align tops */
+  	display: flex;
+  	justify-content: space-between; /* optional: space between them */
+  	align-items: stretch; /* align tops */
 	min-height: 300px;
 }
 
@@ -185,13 +185,13 @@ p {
 
 @media (max-width: 768px) {
   .middle-row {
-    flex-direction: column;
-    align-items: center;
+    	flex-direction: column;
+    	align-items: center;
   }
 
   .key-info, .image-carousel, .bring, .video {
-    max-width: 100%;
-    width: 100%;
+    	max-width: 100%;
+    	width: 100%;
   }
 }
 
@@ -216,12 +216,12 @@ p {
 /* Stack vertically on smaller screens */
 @media (max-width: 768px) {
   .lists {
-    flex-direction: column;
-    align-items: center; /* center vertically stacked buttons */
+    	flex-direction: column;
+    	align-items: center; /* center vertically stacked buttons */
   }
 
   .list {
-    width: 100%; /* keep same size */
+    	width: 100%; /* keep same size */
   }
 }
 
@@ -243,12 +243,12 @@ p {
 /* Stack vertically on smaller screens */
 @media (max-width: 768px) {
   .contacts {
-    flex-direction: column;
-    align-items: center; /* center vertically stacked buttons */
+    	flex-direction: column;
+    	align-items: center; /* center vertically stacked buttons */
   }
 
   .contact {
-    width: 100%; /* keep same size */
+    	width: 100%; /* keep same size */
   }
 }
 
