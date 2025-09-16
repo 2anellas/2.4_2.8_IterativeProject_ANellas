@@ -16,13 +16,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<!-- css stylesheet -->
-		<link rel="stylesheet" href="css/style_v2.css">
+		<link rel="stylesheet" href="css/style_v3.css">
 		
 		<!-- Icons -->
 		<script src="https://kit.fontawesome.com/9f28203115.js" crossorigin="anonymous"></script>
 		
 		<!-- Favicon -->
-		<link rel="icon" type="image/x-icon" href="images/forest.png">
+		<link rel="icon" type="image/x-icon" href="images/outdoor.png">
 
 	</head>
 	
@@ -36,7 +36,7 @@
 			
 			<div class="nav">
 				
-				<div class="logo"><a href="index_v2.html">TC LOGO</a></div>
+				<div class="logo"><a href="index_v3.html"><img src="images/tc_logo.png"/></a></div>
     				<div class="burger" id="burger">
       					<div class="line"></div>
       					<div class="line"></div>
@@ -44,18 +44,18 @@
     				</div>
     
 				<ul class="nav-links" id="navLinks">
-      				<li><a href="page2_v1.html">Community Service</a></li>
-      				<li><a href="page3_v1.html">Rangituhi Walk</a></li>
-      				<li><a href="page4_v1.html">Adrenaline Forest + Te Rauparaha</a></li>
-					<li><a href="page5_v1.html">Camp Wainui</a></li>
-      				<li><a href="page6_v1.html">Contact</a></li>
+      				<li><a href="page2_v2.html"><span class="fa fa-solid fa-handshake"></span> Community Service</a></li>
+      				<li><a href="page3_v2.html"><span class="fa fa-solid fa-person-walking"></span> Rangituhi Walk</a></li>
+      				<li><a href="page4_v2.html"><span class="fa fa-solid fa-tree"></span> Adrenaline Forest + Te Rauparaha</a></li>
+					<li><a href="page5_v2.html"><span class="fa fa-solid fa-campground"></span> Camp Wainui</a></li>
+      				<li><a href="page6_v2.html"><span class="fa fa-solid fa-phone"></span> Contact</a></li>
     			</ul>
 				
 			</div>
 			
 			<div class="header">
 			
-				<img src="images/Screenshot 2025-06-11 121659.png"/>
+				<img src="images/header_pg4.png"/>
 			
 			</div>
 	
@@ -81,7 +81,17 @@
 					
 				<div class="image-carousel">
 					
-					image carousel here
+					<div class="carousel-wrapper">
+						
+						<img src="images/activities_3.jpg" alt="Image 1" class ="carousel-image active"/>
+						<img src="images/af_1.png" alt="Image 2" class ="carousel-image "/>
+						<img src="images/af_2_v2.png" alt="Image 3" class ="carousel-image "/>
+						<img src="images/af_3.png" alt="Image 4" class ="carousel-image "/>
+						
+					</div>
+					
+					<button class="carousel-btn prev"><span class="fa fa-solid fa-arrow-left"></span></button>
+					<button class="carousel-btn next"><span class="fa fa-solid fa-arrow-right"></span></button>
 					
 				</div>
 					
@@ -89,11 +99,11 @@
 				
 					<h1>Key Information</h1>
 					
-					<p><strong>Meeting Location:</strong> Tawa Train Station</p>
+					<p><span class="fa fa-solid fa-location-dot"></span><strong> Meeting Location:</strong> Tawa Train Station</p>
 					
-					<p><strong>Meeting Time:</strong> 8.15am</p>
+					<p><span class="fa fa-solid fa-clock"></span><strong> Meeting Time:</strong> 8.15am</p>
 					
-					<p><strong>Activity Location:</strong> Adrenaline Forest + Te Rauparaha Arena</p>
+					<p><span class="fa fa-solid fa-location-dot"></span><strong> Activity Location:</strong> Adrenaline Forest + Te Rauparaha Arena</p>
 				
 				</div>
 					
@@ -112,11 +122,13 @@
 					
 				<div class="video">
 				
-					video here
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/xwSBH09iBFg?si=NqjOb1cu9TZonlel" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 				
 				</div>
 					
 				</div>
+				
+				<button onclick="topFunction()" id="myBtn" title="Go to top"><span class="fa fa-solid fa-arrow-up"></span></button>
 			
 			</div>
 	
@@ -127,8 +139,15 @@
 			</div>
 			
 		</div>
+		
+		<!-- back to top button javascript -->
+		<script type="text/javascript" src="js/backtotop.js"></script>
 	
+		<!-- nav javascript -->
 		<script type="text/javascript" src="js/nav.js"></script>
+		
+		<!-- carousel javascript -->
+		<script type="text/javascript" src="js/image_carousel.js"></script>
 		
 	</body>
 	
