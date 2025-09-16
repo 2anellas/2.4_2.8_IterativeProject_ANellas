@@ -5,7 +5,8 @@
 :root{
 	--navy: #033076; /*used for layout components*/
 	--yellow: #FEC63D; /*used for some text components*/
-	--red: 	#B70F0A; /*used for hover effect on navigation buttons - desktop only*/
+	--red: 	#840705; /*used for hover effect on navigation buttons - desktop only*/
+	--black: #000000; /*used for big bodies of text for contrast*/
 }
 
 
@@ -33,6 +34,14 @@
 	width: 100%;
 }
 
+/****ICONS CSS****/
+.fa {
+	font-size: 16px;
+	border-radius: 15px;
+	padding: 5px;
+	margin: -2px;
+	text-align: center;
+}
 
 /****NAVIGATION CSS****/
 .nav {
@@ -43,6 +52,11 @@
 	padding: 10px 20px;
 	position: relative;
 	font-family: "TikTok Sans", sans-serif;
+}
+
+.nav img {
+	height: 40px;
+	padding-top: 10px;
 }
 
 
@@ -119,15 +133,17 @@
 h1 {
 	text-align: center;
 	font-family: "TikTok Sans", sans-serif;
+	color: var(--black);
 }
 
 p {
 	text-align: left;
-	margin-left: 80px;
-	margin-right: 80px;
+	margin-left: 100px;
+	margin-right: 100px;
 	margin-top: 30px;
 	margin-bottom: 30px;
 	font-family: "TikTok Sans", sans-serif;
+	color: var(--black);
 }
 
 /****MEDIA QUERY FOR RESPONSIVE DESIGN****/
@@ -151,34 +167,51 @@ p {
 	gap: 20px;
 }
 
+.activity-item {
+	width: 22.5%;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+.activity-item img {
+	width: 100%;
+	height: 300px;
+	border-bottom: none;
+	display: block;
+	margin-bottom: 15px;
+	border-radius: 10px;
+}
+
 .activity-links a {
   	display: block;
- 	width: 22.5%; /* same size for all */
   	padding: 20px;
   	color: white;
   	text-decoration: none;
-  	text-align: center;
-  	box-sizing: border-box;
 	border: 2px solid white;
 	font-family: "TikTok Sans", sans-serif;
 }
 
 .activity-links a:hover {
-	background-color: var(--red);
+	background-color: var(--navy);
 	border: none;
 }
 
 /****MEDIA QUERY FOR RESPONSIVE DESIGN****/
 /* Stack vertically on smaller screens */
-@media (max-width: 750px) {
-  .activity-links {
+@media (max-width: 768px) {
+  	.activity-links {
     	flex-direction: column;
     	align-items: center; /* center vertically stacked buttons */
-  }
+  	}
 
-  .activity-links a {
-    width: 100%; /* keep same size */
-  }
+  	.activity-item {
+    	width: 100%; /* keep same size */
+  	}
+	
+	.activity-item img {
+		height: 250px;
+	}
+	
 }
 
 .box {
@@ -186,7 +219,7 @@ p {
 }
 
 .activities {
-	background-color: var(--navy);
+	background-color: var(--red);
 	padding-left: 10px;
 	padding-right: 10px;
 	padding-top: 15px;
@@ -196,13 +229,12 @@ p {
 
 /****ACTIVITY PAGE CSS****/
 .middle-row {
-  	display: flex;
-  	justify-content: space-between; 
+  	display: flex; 
   	align-items: stretch; /* align tops */
 	min-height: 300px;
 }
 
-.key-info {
+.key-info  {
 	flex: 1;
 	background-color: var(--navy);
 }
@@ -210,16 +242,93 @@ p {
 .image-carousel{
 	flex: 1;
 	background-color: var(--red);
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	height 100%;
+	box-sizing: border-box;
 }
+
+.carousel-wrapper {
+	width: 75%;
+	max-height: 75%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.carousel-image {
+	display: none;
+	width: 100%;
+	height: auto%;
+	object-fit: contain;
+	position: relative;
+}
+
+.carousel-image.active {
+	display: block;
+}
+
+.carousel-btn {
+  	position: absolute;
+  	top: 50%;
+  	transform: translateY(-50%);
+	color: white;
+	background-color: var(--red);
+  	border: solid 2px white;
+  	padding: 10px 15px;
+  	font-size: 24px;
+  	cursor: pointer;
+  	user-select: none;
+  	border-radius: 45px;
+  	z-index: 10;
+}
+
+.carousel-btn:hover {
+	background-color: var(--navy);
+	border: none;
+}
+
+.carousel-btn.prev {
+  	left: 50px;
+}
+
+.carousel-btn.next {
+  	right: 50px;
+}
+
+
 
 .bring {
 	flex: 1;
 	background-color: white;
+	box-sizing: border-box;
+	padding: 20px;
 }
 
 .video {
 	flex: 1;
 	background-color: white;
+	padding: 20px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+	position: relative;
+}
+
+.video iframe {
+	width: 100%;
+	height: auto;
+	max-height: 100%;
+	aspect-ratio: 16/9;
+	max-width: 100%;
 }
 
 .key-info p {
@@ -234,21 +343,37 @@ p {
 /****MEDIA QUERY FOR RESPONSIVE DESIGN****/
 /* Stack vertically on smaller screens */
 @media (max-width: 768px) {
-  .middle-row {
+  	.middle-row {
     	flex-direction: column;
     	align-items: center;
   }
 
-  .key-info, .image-carousel, .bring, .video {
+  	.key-info, .image-carousel, .bring, .video {
     	max-width: 100%;
     	width: 100%;
   }
+	
+	.carousel-wrapper {
+		padding: 25px;
+		width: 100%;
+		max-height: 100%
+	}
+	
+	.carousel-btn.prev {
+  		left: 15px;
+	}
+
+	.carousel-btn.next {
+  		right: 15px;
+	}
+	
 }
 
 .box ol {
 	font-family: "TikTok Sans", sans-serif;
-	margin-left: 80px;
-	margin-right: 80px;
+	margin-left: 100px;
+	margin-right: 100px;
+	color: var(--black);
 }
 
 /****MEDIA QUERY FOR RESPONSIVE DESIGN****/
@@ -263,6 +388,7 @@ p {
 .box h2 {
 	font-family: "TikTok Sans", sans-serif;
 	margin-left: 80px;
+	color: var(--black);
 }
 
 /****MEDIA QUERY FOR RESPONSIVE DESIGN****/
@@ -274,7 +400,7 @@ p {
 }
 
 .gear-list {
-	background-color: var(--navy);
+	background-color: var(--red);
 	padding: 15px;
 }
 
@@ -284,6 +410,7 @@ p {
 
 .gear-list h2 {
 	text-align: center;
+	color: var(--black);
 }
 
 .lists {
@@ -298,11 +425,13 @@ p {
 	width: 22.5%;
 	align-items: center;
 	font-family: "TikTok Sans", sans-serif;
+	color: var(--black);
 }
 
 .list p {
 	margin-left: 20px;
 	text-align: left;
+	color: var(--black);
 }
 
 /****MEDIA QUERY FOR RESPONSIVE DESIGN****/
@@ -318,7 +447,6 @@ p {
   }
 }
 
-
 /****CONTACT PAGE CSS****/
 .contacts {
 	display: flex;
@@ -328,27 +456,27 @@ p {
 
 .contact {
 	background-color: var(--navy);
-	display: inline-block;
+	display: flex;
 	width: 31%;
 	align-items: center;
-	margin: 15px;
-	min-height: 200px;
+	border-radius: 30px;
+	flex-direction: column;
+	justify-content: center;
+	margin: 30px;
 }
 
 .contact h2 {
 	color: white;
 	text-align: center;
-	padding-top: 30px;
 	margin: auto;
-	padding: auto;
+	padding-top: 50px;
 }
 
 .contact p {
 	color: white;
 	text-align: center;
-	padding-bottom: 30px;
 	margin: auto;
-	padding: auto;
+	padding-bottom: 70px;
 }
 
 /****MEDIA QUERY FOR RESPONSIVE DESIGN****/
@@ -363,6 +491,18 @@ p {
     width: 100%; /* keep same size */
   }
 }
+
+.contact span {
+	font-size: 60px;
+	text-align: center;
+	color: var(--navy);
+	background-color: white;
+	padding: 15px;
+	border-radius: 50px;
+	margin-top: 70px;
+}
+
+
 
 /****FOOTER CSS****/
 .footer {
@@ -380,3 +520,29 @@ p {
 h5 {
 	font-size: clamp(0.625rem, 1.5vw, 1rem)	
 }
+
+
+/****BACK TO TOP BUTTON CSS****/
+#myBtn {
+  	display: none; /* Hidden by default */
+  	position: fixed; /* Fixed/sticky position */
+  	bottom: 20px; /* Place the button at the bottom of the page */
+  	right: 30px; /* Place the button 30px from the right */
+  	z-index: 99; /* Make sure it does not overlap */
+  	border: none; /* Remove borders */
+  	outline: none; /* Remove outline */
+  	background-color: black; /* Set a background color */
+  	color: white; /* Text color */
+  	cursor: pointer; /* Add a mouse pointer on hover */
+  	padding: 15px; /* Some padding */
+  	border-radius: 10px; /* Rounded corners */
+  	font-size: 18px; /* Increase font size */
+  	font-family: 'Rubik', sans-serif;
+	opacity: 0.7;
+}
+
+#myBtn:hover {
+  	background-color: ; 
+	opacity: 100%;
+}
+
